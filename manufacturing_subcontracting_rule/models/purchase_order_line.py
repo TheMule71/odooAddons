@@ -43,7 +43,7 @@ class PurchaseOrderLine(models.Model):
 
     @api.depends('order_id.state', 'move_ids.state')
     def _compute_qty_received(self):
-        super(PurchaseOrderLine, self)._compute_qty_received()
+        #super(PurchaseOrderLine, self)._compute_qty_received()
         for line in self:
             prod_to_produce = self.env['product.product']
             s_product = self.env['product.product']
